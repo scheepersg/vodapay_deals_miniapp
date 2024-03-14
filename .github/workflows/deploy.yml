@@ -17,15 +17,12 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
           terraform_version: 1.0.5
-          
-      - name: Change directory to Terraform directory
-        run: cd terraform
 
       - name: Terraform Init
         run: terraform init
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan ../terraform/
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
